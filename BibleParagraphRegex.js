@@ -4,7 +4,7 @@ let paragraph = `There are 30 books of the Bible in this paragraph. Can you find
 books.forEach(word =>  {
     word = word.replace(/\d /g, "")
     word = [...word]
-    word = new RegExp(`${word.join("[^a-zA-z]*")}`, "gi")
+    word = new RegExp(`(?<=[^\*])${word.join("[^a-zA-z]*")}`, "gi")
     let match = paragraph.match(word)?.[0]
     paragraph = paragraph.replace(match, `**${match}**`)
 })
