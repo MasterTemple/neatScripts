@@ -41,6 +41,17 @@ var assignments = {};
   };
 });
 
+// there is no weight
+if(Object.keys(assignments).length == 0) {
+  assignments = {
+    "Assignments": {
+      weight: 100,
+      average: 0,
+      possible: 0
+    }
+  }
+}
+
 // removes "Total" category
 delete assignments["Total"];
 
